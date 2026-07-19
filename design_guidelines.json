@@ -1,0 +1,107 @@
+{
+  "theme": "dark",
+  "design_philosophy": "Midnight Editorial. A fusion of high-fashion editorial asymmetry with tech-forward brutalism. The design relies on pure typography, deep void-like backgrounds, and sharp contrasting borders. Products are treated like art exhibits, not just commodities. Negative space is a structural element.",
+  "typography": {
+    "headings": {
+      "font": "Cormorant Garamond",
+      "instruction": "Import via Google Fonts. Use exclusively for H1, H2, and massive hero text.",
+      "weights": ["300", "400", "600"],
+      "classes": "font-serif tracking-tighter"
+    },
+    "body": {
+      "font": "Manrope",
+      "instruction": "Import via Google Fonts. Use for standard UI elements and product descriptions.",
+      "weights": ["400", "500", "700"],
+      "classes": "font-sans leading-relaxed text-zinc-300"
+    },
+    "mono": {
+      "font": "JetBrains Mono",
+      "instruction": "Import via Google Fonts. Use for tech-specs, prices, overlines, and metadata.",
+      "weights": ["400"],
+      "classes": "font-mono uppercase tracking-[0.2em] text-xs text-zinc-400"
+    },
+    "rules": "Never use generic sans (like Inter) for headings. Keep fluid scaling (text-4xl sm:text-5xl lg:text-6xl) for hero, do not exceed text-6xl. Maintain tight line-heights (leading-none) for headings."
+  },
+  "colors": {
+    "archetype": "Luxury & Tech-Forward",
+    "background": "#0a0a0a",
+    "foreground": "#ffffff",
+    "card": "#121212",
+    "border": "rgba(255, 255, 255, 0.08)",
+    "primary": "#d1ff4c",
+    "primary_foreground": "#000000",
+    "muted": "#1a1a1a",
+    "muted_foreground": "#8a8a8a",
+    "rules": "No generic SaaS blue. Use #0a0a0a as the core void background. Use the neon chartreuse (#d1ff4c) purely as an accent for the critical 'Buy on Amazon' / CTA buttons to trigger absolute attention. No generic full-screen gradients."
+  },
+  "surfaces_and_textures": {
+    "glassmorphism": "Use Crystal variant for the sticky nav. `backdrop-blur-xl bg-black/60 border-b border-white/10`. NEVER use full transparent header.",
+    "borders": "1px solid white/10 (border-white/10) for cards. Expose the grid skeleton on the categories page.",
+    "texture": "Implement a subtle SVG noise overlay across the main body to kill the flat 'digital' feel and simulate physical medium."
+  },
+  "layouts_and_grids": {
+    "landing_page": "Bento 'Tetris' grid. Asymmetrical, overlapping sections. Massive paddings (py-24, py-32). Use text sizes boldly. Do not center everything; use left-aligned stark structures.",
+    "category_page": "High density image grids but broken by negative space. Use pure CSS Grid.",
+    "product_page": "Split layout. 50vw sticky image on left, scrolling specs and editorial description on the right. Minimalist.",
+    "admin_panel": "Dense, functional, 'Swiss' tabular style. No soft shadows, hard 1px borders."
+  },
+  "motion_and_interactions": {
+    "libraries": "framer-motion, lenis (for smooth scrolling momentum)",
+    "hover_states": "Product cards: subtle lift (-translate-y-1), border brightens to border-white/30. Image scale inside card overflow-hidden.",
+    "page_transitions": "Fade and slight Y-axis reveal for page enters.",
+    "rules": "Respect prefers-reduced-motion. Animations must be elegant and crisp, not bouncy or cartoonish."
+  },
+  "components_strategy": {
+    "marketing": "Pure HTML/Tailwind for Hero, Categories grid, and custom sections. No Shadcn wrappers for core layouts to maintain fluid asymmetry.",
+    "ui_elements": "Use Shadcn components ONLY for interactive logic (Search Dialog, Forms, Admin tables). Strip Vercel-look by overriding rounded corners to `rounded-none` or `rounded-sm`.",
+    "buttons": "Sharp edges (rounded-none), high contrast. 'Buy on Amazon' CTA must use the primary neon color. Others should be pure border (border border-white/20 hover:bg-white hover:text-black).",
+    "icons": "Use `lucide-react` with thin stroke-widths (1 or 1.5)."
+  },
+  "image_urls": {
+    "landing_hero": {
+      "url": "https://images.unsplash.com/photo-1622737133809-d95047b9e673?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBnZW9tZXRyaWMlMjBwcmVtaXVtJTIwc3R1ZGlvJTIwbGlnaHRpbmd8ZW58MHx8fHwxNzg0NDg0MzY3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract dark geometric setup for the landing page hero."
+    },
+    "electronics": {
+      "url": "https://images.pexels.com/photos/14309807/pexels-photo-14309807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Spherical premium electronic device on dark background."
+    },
+    "home": {
+      "url": "https://images.pexels.com/photos/28795082/pexels-photo-28795082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Retro tech / CRT TV for the Home category."
+    },
+    "fashion": {
+      "url": "https://images.unsplash.com/photo-1544411047-c491e34a24e0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwxfHxlbGVjdHJvbmljcyUyMGhvbWUlMjBmYXNoaW9uJTIwZGFyayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzg0NDg0MzY3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Urban night city aesthetic for Fashion/Lifestyle."
+    },
+    "sports": {
+      "url": "https://images.unsplash.com/photo-1714564209284-1ba07d735e76?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBzcG9ydHMlMjBib29rcyUyMGRhcmslMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzg0NDg0MzY3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Black and white pool table for Sports."
+    },
+    "books": {
+      "url": "https://images.unsplash.com/photo-1763510385683-6374fac8df54?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwyfHxiZWF1dHklMjBzcG9ydHMlMjBib29rcyUyMGRhcmslMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzg0NDg0MzY3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Open book by candlelight for Books."
+    },
+    "beauty": {
+      "url": "https://images.unsplash.com/photo-1730391002761-f9a7175e0710?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwzfHxiZWF1dHklMjBzcG9ydHMlMjBib29rcyUyMGRhcmslMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzg0NDg0MzY3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Woman in dark aesthetic for Beauty."
+    }
+  },
+  "universal_guidelines_for_main_agent": [
+    "Write components in .js or .jsx, NOT .tsx, as specified in the environment.",
+    "Do not converge towards generic 'AI slop' aesthetic. Center-aligned text and generic heavy gradients are strictly banned.",
+    "You MUST NOT apply universal transitions (e.g. `transition: all`). Create custom transitions for specific transforms.",
+    "You MUST NOT center align the app container in App.css.",
+    "All interactive and key informational elements MUST include a `data-testid` attribute (e.g., `data-testid=\"hero-cta-button\"`).",
+    "Toasts must use `sonner`.",
+    "Avoid using placeholder URLs. Use the exact provided image URLs from the image_urls block.",
+    "Never hide desktop navigation behind a hamburger menu.",
+    "Never use completely transparent backgrounds for elements where content will scroll underneath it. ALWAYS use backdrop-blur + semi-transparent dark colors."
+  ],
+  "accessibility": {
+    "contrast": "Ensure text over images uses text-shadow or a gradient underlay (`bg-gradient-to-t from-black/80 to-transparent`) to hit 4.5:1 ratio.",
+    "focus": "Focus states must be explicitly styled (e.g., `focus:ring-2 focus:ring-primary focus:outline-none`).",
+    "motion": "Wrap major framer-motion animations in `useReducedMotion` hooks or standard media queries if pure CSS."
+  },
+  "instructions_to_main_agent": "1. Initialize the app enforcing the `.dark` class by default on HTML/body. 2. Install Google Fonts (`Cormorant Garamond`, `Manrope`, `JetBrains Mono`) in index.html. 3. Configure Tailwind config with the specific dark mode colors mapped above. 4. Build three main routes: Landing, Categories, Products + an Admin panel route. 5. Append `?tag=4StarAbove` to all outgoing Amazon product links dynamically."
+}
